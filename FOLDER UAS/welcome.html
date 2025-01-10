@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Datang di Perpustakaan</title>
+    <link rel="stylesheet" href="style register.css">
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di Perpustakaan</h1>
+    </header>
+
+    <section class="welcome-section">
+        <h2>Terima kasih telah mendaftar!</h2>
+        <p>Anda telah berhasil membuat akun perpustakaan dengan data berikut:</p>
+        <table>
+            <tr>
+                <td><strong>Nama Lengkap:</strong></td>
+                <td><span id="name-display"></span></td>
+            </tr>
+            <tr>
+                <td><strong>Email:</strong></td>
+                <td><span id="email-display"></span></td>
+            </tr>
+            <tr>
+                <td><strong>Jenis Keanggotaan:</strong></td>
+                <td><span id="membership-display"></span></td>
+            </tr>
+        </table>
+        <button onclick="window.location.href='login.html'">Kembali ke Halaman Login</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Perpustakaan Online</p>
+    </footer>
+
+    <script>
+        // Mengambil data dari Local Storage dan menampilkannya
+        const name = localStorage.getItem('name');
+        const email = localStorage.getItem('email');
+        const membership = localStorage.getItem('membership');
+
+        // Menampilkan data di elemen yang sesuai
+        document.getElementById('name-display').textContent = name;
+        document.getElementById('email-display').textContent = email;
+        document.getElementById('membership-display').textContent = membership.charAt(0).toUpperCase() + membership.slice(1);
+    </script>
+</body>
+</html>

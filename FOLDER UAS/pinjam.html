@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peminjaman Buku Perpustakaan</title>
+    <link rel="stylesheet" href="style_pinjam.css">
+</head>
+<body>
+    <header>
+        <h1>Peminjaman Buku Perpustakaan</h1>
+        <p>Silakan pilih buku yang ingin Anda pinjam.</p>
+    </header>
+    
+    <section class="form-section">
+        <form action="checkout.html" method="GET">
+            <div class="form-group">
+                <label for="name">Nama Lengkap:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="book">Pilih Buku:</label>
+                <select id="book" name="book" required>
+                    <option value="1">JavaScript for Beginners</option>
+                    <option value="2">HTML & CSS Mastery</option>
+                    <option value="3">Advanced Python</option>
+                    <option value="4">Database Management</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="duration">Durasi Pinjaman (Hari):</label>
+                <input type="number" id="duration" name="duration" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Alamat Lengkap:</label>
+                <input type="text" id="address" name="address" placeholder="Alamat Jalan" required>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit">Pinjam Buku</button>
+            </div>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Perpustakaan Online</p>
+    </footer>
+</body>
+</html>

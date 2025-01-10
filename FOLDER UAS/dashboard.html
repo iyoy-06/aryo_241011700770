@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Perpustakaan Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo perpus.jpg" alt="Logo Perpustakaan" class="logo">
+        <h1>selamat datang di perpustakaan digital</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="pinjam.html">pinjam buku</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Informasi Pengguna</h2>
+            <p><strong>Nama:</strong> <span id="user-name"></span></p>
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+            <p><strong>Keanggotaan:</strong> <span id="user-membership"></span></p>
+        </section>
+
+        <button onclick="logout()">Logout</button>
+        <p><b><i>semua data dan informasi yang anda disini akan hilang setelah anda logout!</i></b></p>
+        <p><b><i>silahkan mendaftar kembali dengan akun dan sandi yang sama!</i></b></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Perpustakaan Digital. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script>
+        // Mengambil data dari Local Storage dan menampilkannya di dashboard
+        document.getElementById('user-name').textContent = localStorage.getItem('name');
+        document.getElementById('user-email').textContent = localStorage.getItem('email');
+        document.getElementById('user-membership').textContent = localStorage.getItem('membership');
+
+        // Fungsi untuk logout dan menghapus data pengguna dari Local Storage
+        function logout() {
+            localStorage.removeItem('name');
+            localStorage.removeItem('email');
+            localStorage.removeItem('username');
+            localStorage.removeItem('password');
+            localStorage.removeItem('membership');
+            window.location.href = "login.html"; // Kembali ke halaman login setelah logout
+        }
+    </script>
+</body>
+</html>

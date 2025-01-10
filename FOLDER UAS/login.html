@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Perpustakaan Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validateLogin(event) {
+            event.preventDefault(); // Mencegah refresh halaman
+
+            // Mengambil nilai dari input username dan password
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Mengambil data dari Local Storage
+            const storedUsername = localStorage.getItem("username");
+            const storedPassword = localStorage.getItem("password");
+
+            // Mengecek apakah username dan password yang dimasukkan cocok dengan yang disimpan di Local Storage
+            if (username === storedUsername && password === storedPassword) {
+                // Redirect ke halaman dashboard jika login berhasil
+                window.location.href = "dashboard.html"; // Halaman dashboard
+            } else {
+                alert("Username atau Password salah!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo perpus.jpg" alt="Logo Perpustakaan" class="logo">
+        <h1>Login ke Perpustakaan Digital</h1>
+    </header>
+
+    <main>
+        <section class="login-form">
+            <form onsubmit="validateLogin(event)">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" class="btn">Login</button>
+            </form>
+
+            <p>Belum memiliki akun? <a href="register.html">Daftar Sekarang</a></p> <!-- Link Register -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Perpustakaan Digital. Semua Hak Dilindungi.</p>
+    </footer>
+</body>
+</html>

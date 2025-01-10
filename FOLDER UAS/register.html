@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Akun Perpustakaan Digital</title>
+    <link rel="stylesheet" href="style register.css">
+</head>
+<body>
+    <header>
+        <h1>Daftar Akun Perpustakaan Digital</h1>
+    </header>
+
+    <main>
+        <section class="register-form">
+            <form id="register-form">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="membership">Jenis Keanggotaan</label>
+                <select id="membership" name="membership" required>
+                    <option value="reguler">Anggota Reguler</option>
+                    <option value="premium">Anggota Premium</option>
+                </select>
+
+                <button type="submit" class="btn">Daftar</button>
+            </form>
+
+            <p>Sudah memiliki akun? <a href="login.html">Login Sekarang</a></p> <!-- Link Login -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Perpustakaan Digital. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script>
+        // Fungsi untuk menyimpan data pengguna di Local Storage dan mengarahkan ke halaman login
+        document.getElementById('register-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form untuk melakukan refresh halaman
+
+            // Mengambil nilai input dari form
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const membership = document.getElementById('membership').value;
+
+            // Menyimpan data ke Local Storage
+            localStorage.setItem('name', name);
+            localStorage.setItem('email', email);
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+            localStorage.setItem('membership', membership);
+
+            // Setelah menyimpan, alihkan pengguna ke halaman login
+            window.location.href = "login.html"; // Mengarahkan ke halaman login
+        });
+    </script>
+</body>
+</html>

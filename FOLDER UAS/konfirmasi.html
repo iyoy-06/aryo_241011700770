@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Terkirim - Perpustakaan Digital</title>
+    <link rel="stylesheet" href="style kontak.css">
+    <script>
+        window.onload = function() {
+            // Mengambil data yang disimpan di localStorage
+            const name = localStorage.getItem("contactName");
+            const email = localStorage.getItem("contactEmail");
+            const message = localStorage.getItem("contactMessage");
+
+            // Menampilkan konfirmasi pengiriman pesan
+            document.getElementById("contact-name").innerText = name;
+            document.getElementById("contact-email").innerText = email;
+            document.getElementById("contact-message").innerText = message;
+
+            // Menghapus data setelah tampil untuk menjaga privasi
+            localStorage.removeItem("contactName");
+            localStorage.removeItem("contactEmail");
+            localStorage.removeItem("contactMessage");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo perpus.jpg" alt="Logo Perpustakaan" class="logo">
+        <h1>Terima Kasih</h1>
+    </header>
+
+    <main>
+        <section class="confirmation">
+            <h2>Pesan Anda Telah Terkirim</h2>
+            <p>Terima kasih, <span id="contact-name"></span>! Pesan Anda telah berhasil dikirim dan kami akan meresponsnya secepat mungkin.</p>
+            <p>Email: <span id="contact-email"></span></p>
+            <p>Pesan: <span id="contact-message"></span></p>
+            <p>Jika ada pertanyaan lebih lanjut, silakan hubungi kami kembali.</p>
+            <a href="index.html" class="btn">Kembali ke Beranda</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Perpustakaan Digital. Semua Hak Dilindungi.</p>
+    </footer>
+</body>
+</html>

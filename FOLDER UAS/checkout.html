@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Peminjaman Buku</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Detail Peminjaman Buku</h1>
+    </header>
+
+    <section class="detail-section">
+        <h2>Terima kasih telah meminjam buku!</h2>
+        <P>Buku akan segera diantar ke rumah anda </P>
+        <p>Berikut detail peminjaman Anda:</p>
+        <table>
+            <tr>
+                <td><strong>Nama Lengkap:</strong></td>
+                <td><span id="name-display"></span></td>
+            </tr>
+            <tr>
+                <td><strong>Buku yang dipinjam:</strong></td>
+                <td><span id="book-display"></span></td>
+            </tr>
+            <tr>
+                <td><strong>Durasi Pinjaman:</strong></td>
+                <td><span id="duration-display"></span> hari</td>
+            </tr>
+            <tr>
+                <td><strong>Alamat:</strong></td>
+                <td><span id="address-display"></span></td> <!-- ID yang sesuai untuk alamat -->
+            </tr>
+        </table>
+        <button onclick="window.location.href='index.html'">Kembali ke Halaman Utama</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Perpustakaan Online</p>
+    </footer>
+
+    <script>
+        // Fetch data from URL parameters and display it
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const book = urlParams.get('book');
+        const duration = urlParams.get('duration');
+        const address = urlParams.get('address'); // Memastikan nama parameter sesuai
+
+        // Mapping book IDs to book names
+        const bookTitles = {
+            "1": "JavaScript for Beginners",
+            "2": "HTML & CSS Mastery",
+            "3": "Advanced Python",
+            "4": "Database Management"
+        };
+
+        // Display data
+        document.getElementById('name-display').textContent = name;
+        document.getElementById('book-display').textContent = bookTitles[book] || "Tidak Diketahui";
+        document.getElementById('duration-display').textContent = duration;
+        document.getElementById('address-display').textContent = address; // Menampilkan alamat
+    </script>
+</body>
+</html>
